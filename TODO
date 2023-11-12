@@ -1,0 +1,10 @@
+			---- EASY PEAZY LEMON SQUEZY ----
+
+[x] Create method getComputerChoice
+	[x] Have an array that has rock , paper and scissors in it
+	[x] Random generate a number to pick from that array the element 
+		corresponding to that number
+
+[_] Create method getPlayerChoice
+
+[_] Create method playRound
