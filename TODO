@@ -6,5 +6,16 @@
 		corresponding to that number
 
 [_] Create method getPlayerChoice
+	[_] take input from user as a string
+	[_] convert into all lower case string
+	[_] check if its one of the three possible inputs
+	[_] store it
+					____ OR ____
+	[x] output to the user the three possible choices
+	[x] Take input from the user as an int
+	[x] check if input is within range
+		[_] if not within then redo step 1 and 2
+		[~] Handle that correctly
+	[x] store the input into a variable
 
 [_] Create method playRound
