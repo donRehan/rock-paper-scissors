@@ -5,7 +5,7 @@
 	[x] Random generate a number to pick from that array the element 
 		corresponding to that number
 
-[_] Create method getPlayerChoice
+[x] Create method getPlayerChoice
 	[_] take input from user as a string
 	[_] convert into all lower case string
 	[_] check if its one of the three possible inputs
@@ -14,8 +14,14 @@
 	[x] output to the user the three possible choices
 	[x] Take input from the user as an int
 	[x] check if input is within range
-		[_] if not within then redo step 1 and 2
-		[~] Handle that correctly
+		[x] if not within then redo step 1 and 2
+		[x] Handle that correctly
 	[x] store the input into a variable
 
 [_] Create method playRound
+	[_] Create a switch case , use the input of user and Computer as output snippets
+		[_] Check for Computer Winning Situations 
+		[_] Check for User Winning Situations 
+		[_] Default Tie
+	[_] Using the following
+		Rock beats scissors, Paper beats Rock and Scissors beats paper.
