@@ -31,5 +31,55 @@ let getUserChoice = () => {
 
 let validateInput = (_) => (_ >= 0 && _ <= 2) ? true : false;
 
-// to be removed
-//console.log(getUserChoice());
+let get_round_result = (computerSelection, userSelection) => {
+	switch (true) {
+		//Computer wins cases
+		case(computerSelection == 'rock' && userSelection == 'scissor'):
+		case(computerSelection == 'scissor' && userSelection == 'paper'):
+		case(computerSelection == 'paper' && userSelection == 'rock'):
+		return `Computer wins! ${computerSelection} beats ${userSelection}`;
+
+		//User wins cases
+		case(userSelection == 'rock' && computerSelection == 'scissor'):
+		case(userSelection == 'scissor' && computerSelection == 'paper'):
+		case(userSelection == 'paper' && computerSelection == 'rock'):
+		return `You win! ${userSelection} beats ${computerSelection}`;
+
+		//Draw case
+		default:
+		return `It's a draw! ${userSelection} equals ${computerSelection}`;
+	}
+}
+
+let play_round = () => 
+{
+	let computerSelection = getComputerChoice();
+	let userSelection = getUserChoice();
+	return get_round_result(computerSelection, userSelection);
+}
+
+// game
+
+let game = () => {
+	let userScore = 0;
+	let computerScore = 0;
+	let round = 0;
+
+	while (round < 5)
+	{
+		console.log(`Round ${round + 1}`)
+		let result = play_round();
+		console.log(result);
+		if (result.includes('You')) userScore++;
+		else if (result.includes('draw')) continue;
+		else computerScore++;
+		round++;
+		console.log(`Score: ${userScore} to ${computerScore}`)
+	}
+
+	if (userScore > computerScore) console.log(`You win! ${userScore} to ${computerScore}`);
+	else if (userScore < computerScore) console.log(`Computer wins! ${computerScore} to ${userScore}`);
+	else console.log(`It's a draw! ${userScore} to ${computerScore}`);
+}
+
+game();

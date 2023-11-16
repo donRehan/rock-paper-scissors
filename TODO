@@ -18,10 +18,15 @@
 		[x] Handle that correctly
 	[x] store the input into a variable
 
-[_] Create method playRound
-	[_] Create a switch case , use the input of user and Computer as output snippets
-		[_] Check for Computer Winning Situations 
-		[_] Check for User Winning Situations 
-		[_] Default Tie
-	[_] Using the following
+[x] Create method get_round_result
+	[x] Create a switch case , use the input of user and Computer as output snippets
+		[x] Check for Computer Winning Situations 
+		[x] Check for User Winning Situations 
+		[x] Default Tie
+	[x] Using the following
 		Rock beats scissors, Paper beats Rock and Scissors beats paper.
+
+[x] Create method play_round
+	[x] Call method get_round_result
+
+[x] Create method game
