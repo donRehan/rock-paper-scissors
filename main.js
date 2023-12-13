@@ -7,6 +7,10 @@ let getComputerChoice = () => {
 let getUserChoice = () => {
 	let flag = true;
 	let choice = null;
+	//New Logic 
+	//Get the ids of the buttons 
+	//Get which button was clicked
+	//Return the value of the button
 
 	while (flag)
 	{
@@ -64,10 +68,13 @@ let game = () => {
 	let userScore = 0;
 	let computerScore = 0;
 	let round = 0;
+	//get console-text div element
+	let consoleText = document.getElementById('console-text');
 
 	while (round < 5)
 	{
-		console.log(`Round ${round + 1}`)
+		//console.log(`Round ${round + 1}`)
+		consoleText.innerHTML += `Round ${round + 1}<br>`;
 		let result = play_round();
 		console.log(result);
 		if (result.includes('You')) userScore++;
@@ -82,4 +89,4 @@ let game = () => {
 	else console.log(`It's a draw! ${userScore} to ${computerScore}`);
 }
 
-game();
+//game();
