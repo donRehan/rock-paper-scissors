@@ -1,3 +1,6 @@
+//Copyright (C) 2023 Alhussien Ahmed
+//[Practicing Signing Files]
+
 let getComputerChoice = () => {
 	let choices = ['rock', 'paper', 'scissor'];
 	let choice = Math.floor(Math.random() * 3);

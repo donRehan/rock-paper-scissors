@@ -1,21 +1,14 @@
 			---- EASY PEAZY LEMON SQUEZY ----
 
 			---- UI Part ----
+PLAN WITH PEN AND PAPER BEFORE CONTINUING 
+MAKE SURE TO CREATE TESTS WHENEVER POSSIBLE TOO
 
-[x] Create buttons for each player selection
-	[x] Create a button for rock , Button for Paper ....
-[_] Make each button playable and adds a selection in the round
-	[_] Instead of console log , Wait using event listener for 
-	player to press the button with his choice
-[_] Display computer choice in an area per round
-	[_] For now just a text
-	[*] Could have a block that shows pictures based on his selection
-[_] Display Results in Divs
-	[_] Current score
-		[_] Create a div for the Current score and round score
-	[_] Final score && Winner
-		[_] When game is finished have a div that shows game done , score
-		...
+[x] Create header 
+[x] Create Footer
+	[x] Add github logo with link to account
+... More to be added next round
+
 [_] Check if we should remove rounds being max of 5 or not 
 [_] Have a readme that is precise for such a small project to develop
 	this habit

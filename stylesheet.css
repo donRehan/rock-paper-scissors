@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "Pacific";
+  src: url("https://static1.squarespace.com/static/5f3c541ce91b77758af98b16/t/5f3c57898850042b62f2564c/1597790089588/Pacific.otf") format("opentype");
+}
+
+body {
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+	font-family: Roboto, sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#header , #footer {
+	font-family: "Pacific";
+	background-color: #222222;
+	color: #ffffff;
+}
+
+#header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+#footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#gh_logo {
+	width: 25px;
+	height: auto;
+	margin-bottom: 20px;
+}
