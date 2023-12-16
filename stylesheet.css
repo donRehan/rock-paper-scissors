@@ -61,3 +61,11 @@ body {
 	align-items: center;
 	gap: 20px;
 }
+
+#console-text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}

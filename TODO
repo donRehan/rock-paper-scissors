@@ -4,8 +4,12 @@
 PLAN WITH PEN AND PAPER BEFORE CONTINUING 
 MAKE SURE TO CREATE TESTS WHENEVER POSSIBLE TOO
 
-[_] Make the game run in the console and you interact using the buttons
+[x] Make the game run in the console and you interact using the buttons
 	?! (Initially ofc)
+[_] Comment the code to be easily understood for good practice !
+[_] Change the wallpaper color 
+[_] Make Round Text clearer
+[_] Make Score design clearer
 
 [x] Create header 
 [x] Create Footer

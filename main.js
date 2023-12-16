@@ -50,8 +50,14 @@ let get_round_result = async (computerSelection, userSelection) => {
 
 let play_round = async () => 
 {
+
 	let computerSelection = await getComputerChoice();
 	let userSelection = await getUserChoice();
+	
+	//Clear console-text div element when a click is made 
+	let consoleText = document.getElementById('console-text');
+	consoleText.innerHTML = '';
+
 	return await get_round_result(computerSelection, userSelection);
 }
 
@@ -66,16 +72,28 @@ let game = async () => {
 
 	while (round < 5)
 	{
-		//console.log(`Round ${round + 1}`)
+
+		/*
+			 This is how it shows up in the console 
+				 You win! paper beats rock
+				      Score: 1 to 0
+						Round 2
+			Fix that
+		*/
+
+		//Then this
 		consoleText.innerHTML += `Round ${round + 1}<br>`;
 		let result = await play_round();
 		console.log(result);
-		console.log("Reached here before waiting ..");
+		//This shows up first
+		consoleText.innerHTML += `${result}<br>`
 		if (result.includes('You')) userScore++;
 		else if (result.includes('draw')) continue;
 		else computerScore++;
 		round++;
 		console.log(`Score: ${userScore} to ${computerScore}`)
+		//Then this
+		consoleText.innerHTML += `Score: ${userScore} to ${computerScore}<br>`;
 	}
 
 	if (userScore > computerScore) console.log(`You win! ${userScore} to ${computerScore}`);
