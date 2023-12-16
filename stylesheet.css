@@ -40,3 +40,24 @@ body {
 	height: auto;
 	margin-bottom: 20px;
 }
+
+#game-area{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#player-buttons {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}

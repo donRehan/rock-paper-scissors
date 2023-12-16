@@ -4,10 +4,18 @@
 PLAN WITH PEN AND PAPER BEFORE CONTINUING 
 MAKE SURE TO CREATE TESTS WHENEVER POSSIBLE TOO
 
+[_] Make the game run in the console and you interact using the buttons
+	?! (Initially ofc)
+
 [x] Create header 
 [x] Create Footer
 	[x] Add github logo with link to account
 ... More to be added next round
+[_] Give credit in the images of the rock paper sciossors to the owner
+	https://tarekvisch.github.io/rock-paper-scissors/
+	Check where he got them from
+[_] Adjust this todolist as it got bloaty
+[_] Add padding below buttons of the rock paper sciossors
 
 [_] Check if we should remove rounds being max of 5 or not 
 [_] Have a readme that is precise for such a small project to develop

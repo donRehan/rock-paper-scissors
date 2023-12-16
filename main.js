@@ -92,4 +92,17 @@ let game = () => {
 	else console.log(`It's a draw! ${userScore} to ${computerScore}`);
 }
 
+//testing console div
+let _ = () => {
+	//get input from user and store it in a variable
+	let input = "Please pick a choice"
+	let game_area = document.getElementById('game-area');
+	let consoleText = document.getElementById('console-text');
+	let h2 = document.createElement('h2');
+	h2.innerHTML = input;
+	consoleText.prepend(h2);
+	//game_area.prepend(consoleText);
+}
+
+_();
 //game();
