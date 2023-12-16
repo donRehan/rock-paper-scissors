@@ -1,44 +1,34 @@
 //Copyright (C) 2023 Alhussien Ahmed
 //[Practicing Signing Files]
 
-let getComputerChoice = () => {
+let getComputerChoice = async () => {
 	let choices = ['rock', 'paper', 'scissor'];
 	let choice = Math.floor(Math.random() * 3);
 	return choices[choice];
 }
 
 let getUserChoice = () => {
-	let flag = true;
-	let choice = null;
-	//New Logic 
-	//Get the ids of the buttons 
-	//Get which button was clicked
-	//Return the value of the button
+  return new Promise((resolve) => {
+    let rock = document.getElementById('rock');
+    let paper = document.getElementById('paper');
+    let scissors = document.getElementById('scissors');
 
-	while (flag)
-	{
-		flag = false;
-		console.log("Please select one from the following: ");
-		console.log("0. rock");
-		console.log("1. paper");
-		console.log("2. scissor");
-		choice = parseInt(prompt("Enter your choice: "));
-		// to be removed
-		//console.log(choice);
-		if(!validateInput(choice)) {
-			console.log("Invalid Choice please select a number from 0 to 2");
-			flag = true;
-		}
-	}
+    rock.onclick = () => {
+      resolve('rock');
+    };
+    paper.onclick = () => {
+      resolve('paper');
+    };
+    scissors.onclick = () => {
+      resolve('scissor');
+    };
+  });
+};
 
-	let choices = ['rock', 'paper', 'scissor'];
-	let selection = choices[choice];
-	return selection;
-}
-
+//NOT USED ANYMORE 
 let validateInput = (_) => (_ >= 0 && _ <= 2) ? true : false;
 
-let get_round_result = (computerSelection, userSelection) => {
+let get_round_result = async (computerSelection, userSelection) => {
 	switch (true) {
 		//Computer wins cases
 		case(computerSelection == 'rock' && userSelection == 'scissor'):
@@ -58,16 +48,16 @@ let get_round_result = (computerSelection, userSelection) => {
 	}
 }
 
-let play_round = () => 
+let play_round = async () => 
 {
-	let computerSelection = getComputerChoice();
-	let userSelection = getUserChoice();
-	return get_round_result(computerSelection, userSelection);
+	let computerSelection = await getComputerChoice();
+	let userSelection = await getUserChoice();
+	return await get_round_result(computerSelection, userSelection);
 }
 
 // game
 
-let game = () => {
+let game = async () => {
 	let userScore = 0;
 	let computerScore = 0;
 	let round = 0;
@@ -78,8 +68,9 @@ let game = () => {
 	{
 		//console.log(`Round ${round + 1}`)
 		consoleText.innerHTML += `Round ${round + 1}<br>`;
-		let result = play_round();
+		let result = await play_round();
 		console.log(result);
+		console.log("Reached here before waiting ..");
 		if (result.includes('You')) userScore++;
 		else if (result.includes('draw')) continue;
 		else computerScore++;
@@ -104,5 +95,5 @@ let _ = () => {
 	//game_area.prepend(consoleText);
 }
 
-_();
-//game();
+//getUserChoice();
+game();
