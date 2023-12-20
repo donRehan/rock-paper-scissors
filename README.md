@@ -1,2 +1,7 @@
 # rock-paper-scissors
-Under Construction ...
+
+Live Demo 
+
+
+Credit to the ROCK PAPER SCISSORS icons used
+https://github.com/TarekVisch/rock-paper-scissors
