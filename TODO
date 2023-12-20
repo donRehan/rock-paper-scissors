@@ -7,52 +7,17 @@ MAKE SURE TO CREATE TESTS WHENEVER POSSIBLE TOO
 [x] Make the game run in the console and you interact using the buttons
 	?! (Initially ofc)
 [_] Comment the code to be easily understood for good practice !
-[_] Change the wallpaper color 
-[_] Make Round Text clearer
-[_] Make Score design clearer
+[x] Change the wallpaper color 
+[x] Make Round Text clearer
+[x] Make Score design clearer
+[x] Adjust that the game is pushed down each round , make it more uniform
 
-[x] Create header 
-[x] Create Footer
-	[x] Add github logo with link to account
-... More to be added next round
-[_] Give credit in the images of the rock paper sciossors to the owner
-	https://tarekvisch.github.io/rock-paper-scissors/
-	Check where he got them from
-[_] Adjust this todolist as it got bloaty
-[_] Add padding below buttons of the rock paper sciossors
+[x] Add Computer Choice / User Choice area
 
-[_] Check if we should remove rounds being max of 5 or not 
-[_] Have a readme that is precise for such a small project to develop
-	this habit
-
-			---- PRE UI CODE ----
-[x] Create method getComputerChoice
-	[x] Have an array that has rock , paper and scissors in it
-	[x] Random generate a number to pick from that array the element 
-		corresponding to that number
-
-[x] Create method getPlayerChoice
-	[_] take input from user as a string
-	[_] convert into all lower case string
-	[_] check if its one of the three possible inputs
-	[_] store it
-					____ OR ____
-	[x] output to the user the three possible choices
-	[x] Take input from the user as an int
-	[x] check if input is within range
-		[x] if not within then redo step 1 and 2
-		[x] Handle that correctly
-	[x] store the input into a variable
-
-[x] Create method get_round_result
-	[x] Create a switch case , use the input of user and Computer as output snippets
-		[x] Check for Computer Winning Situations 
-		[x] Check for User Winning Situations 
-		[x] Default Tie
-	[x] Using the following
-		Rock beats scissors, Paper beats Rock and Scissors beats paper.
-
-[x] Create method play_round
-	[x] Call method get_round_result
-
-[x] Create method game
+BUGS
+[x] Game once text incremented I cannot scroll down , Why ??
+	Maybe because of adding text how can I fix it ? Maybe create empty text elements
+	Work on just changing their content rather than just adding text
+	Understand DOM's part in here
+[x] On larger screens like my other screen the whole look of the site is not right
+	[Fixed by setting justify content to space between instead of center]

@@ -1,6 +1,29 @@
 //Copyright (C) 2023 Alhussien Ahmed
 //[Practicing Signing Files]
 
+// Function to open the modal with a custom message
+function openModal(message) {
+    var modalContainer = document.getElementById('modal-container');
+    var modalMessage = document.getElementById('modal-message');
+
+    modalMessage.innerHTML = message;
+    modalContainer.style.display = 'flex';
+
+	// Add an event listener to the "Play Again" button
+    var playAgainButton = document.getElementById('playagain');
+    playAgainButton.addEventListener('click', playAgain);
+}
+
+function playAgain() {
+    window.location.reload();
+}
+
+// Function to close the modal
+function closeModal() {
+    var modalContainer = document.getElementById('modal-container');
+    modalContainer.style.display = 'none';
+}
+
 let getComputerChoice = async () => {
 	let choices = ['rock', 'paper', 'scissor'];
 	let choice = Math.floor(Math.random() * 3);
@@ -54,6 +77,12 @@ let play_round = async () =>
 	let computerSelection = await getComputerChoice();
 	let userSelection = await getUserChoice();
 	
+	//Show the images
+	let computers = document.getElementById('computers');
+	computers.src = `./imgs/${computerSelection}.png`;
+	let players = document.getElementById('players');
+	players.src = `./imgs/${userSelection}.png`;
+
 	//Clear console-text div element when a click is made 
 	let consoleText = document.getElementById('console-text');
 	consoleText.innerHTML = '';
@@ -69,36 +98,32 @@ let game = async () => {
 	let round = 0;
 	//get console-text div element
 	let consoleText = document.getElementById('console-text');
+	let user_score = document.getElementById('usr-score');
+	let pc_score = document.getElementById('pc-score');
 
-	while (round < 5)
+	while (userScore < 5 && computerScore < 5)
 	{
-
-		/*
-			 This is how it shows up in the console 
-				 You win! paper beats rock
-				      Score: 1 to 0
-						Round 2
-			Fix that
-		*/
-
-		//Then this
-		consoleText.innerHTML += `Round ${round + 1}<br>`;
 		let result = await play_round();
+		//consoleText.innerHTML += `Round ${round + 1}<br>`;
 		console.log(result);
-		//This shows up first
 		consoleText.innerHTML += `${result}<br>`
 		if (result.includes('You')) userScore++;
 		else if (result.includes('draw')) continue;
 		else computerScore++;
 		round++;
-		console.log(`Score: ${userScore} to ${computerScore}`)
-		//Then this
-		consoleText.innerHTML += `Score: ${userScore} to ${computerScore}<br>`;
+		console.log(`Score: ${userScore} to ${computerScore}`);
+		user_score.innerHTML = `${userScore}`;
+		pc_score.innerHTML = `${computerScore}`;
+		//consoleText.innerHTML += `Score: ${userScore} to ${computerScore}<br>`;
 	}
 
 	if (userScore > computerScore) console.log(`You win! ${userScore} to ${computerScore}`);
 	else if (userScore < computerScore) console.log(`Computer wins! ${computerScore} to ${userScore}`);
 	else console.log(`It's a draw! ${userScore} to ${computerScore}`);
+
+	consoleText.innerHTML += `Game over! ${userScore} to ${computerScore}<br>`;
+	//alert(`Game over! ${userScore} to ${computerScore}`);
+	openModal(`Game over! ${userScore} to ${computerScore}`);
 }
 
 //testing console div
